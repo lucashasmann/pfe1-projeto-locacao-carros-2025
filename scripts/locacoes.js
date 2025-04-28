@@ -111,7 +111,7 @@ document.getElementById('rentalForm').addEventListener('submit', function(e) {
     localStorage.setItem('acmeRentals', JSON.stringify(rentals));
     
     alert('Reserva confirmada! Redirecionando para suas locações...');
-    window.location.href = '/pages/locacoeslive.html';
+    window.location.href = '../pages/locacoeslive.html';
     
     
   } catch (e) {

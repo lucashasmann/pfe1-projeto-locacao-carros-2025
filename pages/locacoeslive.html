@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Locadora LH</title>
+  <link href="https://fonts.cdnfonts.com/css/courier-new" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../styles/style.css">
+  <link rel="stylesheet" href="../styles/locacoesativas.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <h1>Locações<span>LH</span></h1>
+      </div>
+      <nav class="navbar">
+        <a href="../pages/locacoes.html" class="active">Locações</a>
+      </nav>
+      <div class="mobile-menu">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </header>
+
+  <main class="car-list-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Locações Ativas</h2>
+      </div>
+
+      <!-- Aqui agora tem a TABELA correta -->
+      <div id="activeRentalsContainer">
+        <table id="tabelaLocacoesAtivas" class="rentals-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Modelo</th>
+              <th>Marca</th>
+              <th>Cliente</th>
+              <th>CPF</th>
+              <th>Início</th>
+              <th>Fim</th>
+              <th>Status</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Os dados serão injetados aqui pelo JavaScript -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <script src="../scripts/locacoeslive.js"></script>
+</body>
+</html>

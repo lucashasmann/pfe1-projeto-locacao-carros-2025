@@ -1,0 +1,133 @@
+:root {
+    --cor1: #003366;
+    --cor2: #006699;
+    --cor3: #0099CC;
+    --cor4: #00CCFF;
+    --cor5: #99DDFF;
+    --transp1: rgba(0, 0, 0, 0.8);
+    --transp2: rgba(255, 255, 255, 0.8);
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --transition: all 0.3s ease;
+  }
+  
+  /* Estilos da tabela */
+  .rentals-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: white;
+    box-shadow: var(--shadow);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .rentals-table th, 
+  .rentals-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--cor5);
+  }
+  
+  .rentals-table th {
+    background-color: var(--cor2);
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+  }
+  
+  .rentals-table tbody tr:hover {
+    background-color: var(--cor5);
+  }
+  
+  .rentals-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+  
+  /* Status badges */
+  .status-badge {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  
+  .status-badge.pending {
+    background-color: #FFF3CD;
+    color: #856404;
+  }
+  
+  .status-badge.active {
+    background-color: #D4EDDA;
+    color: #155724;
+  }
+  
+  .status-badge.completed {
+    background-color: #F8D7DA;
+    color: #721C24;
+  }
+  
+  /* Botões de ação */
+  .btn-action {
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 5px;
+    margin: 0 3px;
+    border-radius: 4px;
+    transition: var(--transition);
+  }
+  
+  .btn-action:hover {
+    transform: translateY(-2px);
+  }
+  
+  .btn-action.danger i {
+    color: var(--danger-color);
+  }
+  
+  .btn-action.info i {
+    color: var(--cor3);
+  }
+  
+  .btn-action.edit i {
+    color: var(--secondary-color);
+  }
+  
+  /* Mensagem de estado vazio */
+  .empty-state {
+    text-align: center;
+    padding: 40px 0;
+    color: var(--cor2);
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    margin-top: 20px;
+  }
+  
+  .empty-state i {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: var(--cor4);
+  }
+  
+  /* Responsividade */
+  @media (max-width: 768px) {
+    .rentals-table {
+      display: block;
+      overflow-x: auto;
+    }
+    
+    .rentals-table th, 
+    .rentals-table td {
+      padding: 8px 10px;
+      font-size: 0.9rem;
+    }
+    
+    .section-header h2 {
+      font-size: 1.5rem;
+    }
+  }

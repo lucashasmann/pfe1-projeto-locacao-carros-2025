@@ -1,1 +1,437 @@
-@import url(./style.css);
+:root {
+    --primary-color: #2563eb;
+    --primary-hover: #1d4ed8;
+    --secondary-color: #f59e0b;
+    --dark-color: #1e293b;
+    --light-color: #f8fafc;
+    --gray-color: #94a3b8;
+    --success-color: #10b981;
+    --danger-color: #ef4444;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --transition: all 0.3s ease;
+  }
+  
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #f1f5f9;
+    color: var(--dark-color);
+    line-height: 1.6;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .header {
+    background: #fff;
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  .header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+  }
+  
+  .logo h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--dark-color);
+  }
+  
+  .logo h1 span {
+    color: var(--primary-color);
+  }
+  
+  .navbar, .filter-options, .search-box, .car-meta, .car-footer, .car-features, .social-icons, .modal-car-meta, .specs-grid {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+  }
+  
+  .navbar a, .footer-section ul li a {
+    color: var(--dark-color);
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    transition: var(--transition);
+  }
+  
+  .navbar a.active, .navbar a:hover {
+    color: var(--primary-color);
+  }
+  
+  .navbar a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--primary-color);
+  }
+  
+  .btn-login, .view-details, .rent-button, .search-box button {
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  
+  .btn-login:hover, .view-details:hover, .rent-button:hover, .search-box button:hover {
+    background: var(--primary-hover);
+  }
+  
+  .mobile-menu {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  .hero {
+    background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url('../images/hero-bg.jpg') center/cover no-repeat;
+    color: #fff;
+    text-align: center;
+    padding: 80px 0;
+  }
+  
+  .hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+    margin: 0 auto 30px;
+    max-width: 700px;
+  }
+  
+  .search-box input {
+    flex: 1;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 6px 0 0 6px;
+    font-size: 1rem;
+  }
+  
+  .car-list-section {
+    padding: 60px 0;
+  }
+  
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+  .section-header h2 {
+    font-size: 2rem;
+  }
+  
+  .filter-options select {
+    padding: 10px 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    background: #fff;
+    font-size: 0.9rem;
+    cursor: pointer;
+  }
+  
+  .car-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+  }
+  
+  .car-card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+  }
+  
+  .car-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,.1), 0 4px 6px -2px rgba(0,0,0,.05);
+  }
+  
+  .car-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: var(--secondary-color);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    z-index: 1;
+  }
+  
+  .car-image, .modal-car-image {
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  
+  .car-image {
+    height: 200px;
+  }
+  
+  .modal-car-image {
+    height: 300px;
+  }
+  
+  .car-info, .modal-car-details {
+    padding: 20px;
+  }
+  
+  .car-card h3, .modal-header h2 {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+  }
+  
+  .car-brand, .modal-car-brand {
+    color: var(--gray-color);
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+  }
+  
+  .car-price {
+    font-size: 1.3rem;
+    font-weight: 700;
+  }
+  
+  .car-price span {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--gray-color);
+  }
+  
+  .car-features span, .spec-item div {
+    background: #e2e8f0;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+  }
+  
+  .modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(0,0,0,0.5);
+    overflow-y: auto;
+  }
+  
+  .modal-content {
+    background: #fff;
+    margin: 50px auto;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 900px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  
+  .close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 1.5rem;
+    color: var(--gray-color);
+    cursor: pointer;
+  }
+  
+  .close:hover {
+    color: var(--dark-color);
+  }
+  
+  .modal-car-specs {
+    margin-bottom: 30px;
+  }
+  
+  .modal-car-specs h3 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+  .spec-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .spec-item i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    width: 50px;
+    height: 50px;
+    background: #dbeafe;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .modal-car-price {
+    background: #f8fafc;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+  }
+  
+  .modal-car-price .price {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+  }
+  
+  .footer {
+    background: var(--dark-color);
+    color: #fff;
+    padding: 60px 0 0;
+  }
+  
+  .footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+  
+  .footer-section h3 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+  }
+  
+  .footer-section h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: var(--primary-color);
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.9rem;
+    opacity: 0.8;
+  }
+  
+  @media (max-width: 992px) {
+    .modal-content {
+      flex-direction: column;
+    }
+    .modal-car-image {
+      height: 250px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .navbar {
+      display: none;
+    }
+    .mobile-menu {
+      display: block;
+    }
+    .section-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .filter-options {
+      width: 100%;
+      flex-direction: column;
+    }
+    .hero h2 {
+      font-size: 2rem;
+    }
+    .hero p {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .hero {
+      padding: 60px 0;
+    }
+    .car-features, .car-footer {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .modal-car-details {
+      padding: 20px;
+    }
+    .specs-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  /* Estilos para o formulário de reserva */
+.reservation-form {
+    padding: 30px;
+  }
+  
+  .reservation-form h2 {
+    margin-bottom: 25px;
+    color: var(--dark-color);
+  }
+  
+  .reservation-form h2 span {
+    color: var(--primary-color);
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--dark-color);
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: var(--transition);
+  }
+  
+  .form-group input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  }
+  
+  /* Responsividade para o modal de reserva */
+  @media (max-width: 576px) {
+    .reservation-form {
+      padding: 20px;
+    }
+  }

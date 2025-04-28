@@ -1,13 +1,293 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Locadora ACME</title>
+    <title>Locadora LH</title>
+    <link href="https://fonts.cdnfonts.com/css/courier-new" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/locacoes.css">
 </head>
 <body>
-    
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <h1>Locadora<span>LH</span></h1>
+      </div>
+      <nav class="navbar">
+        <a href="../pages/locacoeslive.html">Locações Ativas</a>
+      </nav>
+      <div class="mobile-menu">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </header>
+
+  <main class="car-list-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Nossos Carros</h2>
+      </div>
+
+      <div class="car-grid">
+        
+        <!-- Card 1 -->
+        <div class="car-card">
+          <div class="car-image" style="background-image: url('../images/onix.png');"></div>
+          <div class="car-info">
+            <div class="car-meta">
+              <span class="car-year">2022</span>
+              <span class="car-mileage"><i class="fas fa-tachometer-alt"></i> 15,000 km</span>
+            </div>
+            <h3>Onix LT 1.0</h3>
+            <p class="car-brand">Chevrolet</p>
+            <div class="car-footer">
+              <button class="view-details" onclick="openModal('Onix LT 1.0', 'Chevrolet', '2022', 'Preto', '15,000 km', '$100', 'Flex', 'Automático', '5 lugares', '../images/onix.png')">Ver Detalhes</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="car-card">
+          <div class="car-image" style="background-image: url('../images/hb20.png');"></div>
+          <div class="car-info">
+            <div class="car-meta">
+              <span class="car-year">2023</span>
+              <span class="car-mileage"><i class="fas fa-tachometer-alt"></i> 25,000 km</span>
+            </div>
+            <h3>HB20 Vision</h3>
+            <p class="car-brand">Hyundai</p>
+            <div class="car-footer">
+              <button class="view-details" onclick="openModal('HB20 Vision', 'Hyundai', '2023', 'Prata', '25,000 km', '$120', 'Flex', 'Automático', '5 lugares', '../images/hb20.png')">Ver Detalhes</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="car-card">
+          <div class="car-image" style="background-image: url('../images/renegade.png');"></div>
+          <div class="car-info">
+            <div class="car-meta">
+              <span class="car-year">2023</span>
+              <span class="car-mileage"><i class="fas fa-tachometer-alt"></i> 10,000 km</span>
+            </div>
+            <h3>Renegade Longitude</h3>
+            <p class="car-brand">Jeep</p>
+            <div class="car-footer">
+              <button class="view-details" onclick="openModal('Renegade Longitude', 'Jeep', '2023', 'Branco', '10,000 km', '$150', 'Flex', 'Automático', '5 lugares', '../images/renegade.png')">Ver Detalhes</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="car-card">
+          <div class="car-image" style="background-image: url('../images/corolla.png');"></div>
+          <div class="car-info">
+            <div class="car-meta">
+              <span class="car-year">2021</span>
+              <span class="car-mileage"><i class="fas fa-tachometer-alt"></i> 30,000 km</span>
+            </div>
+            <h3>Corolla XEI 2.0</h3>
+            <p class="car-brand">Toyota</p>
+            <div class="car-footer">
+              <button class="view-details" onclick="openModal('Corolla XEI 2.0', 'Toyota', '2021', 'Cinza', '30,000 km', '$130', 'Flex', 'Automático', '5 lugares', '../images/corolla.png')">Ver Detalhes</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="car-card">
+          <div class="car-image" style="background-image: url('../images/civic.png');"></div>
+          <div class="car-info">
+            <div class="car-meta">
+              <span class="car-year">2021</span>
+              <span class="car-mileage"><i class="fas fa-tachometer-alt"></i> 30,000 km</span>
+            </div>
+            <h3>Civic Touring</h3>
+            <p class="car-brand">Honda</p>
+            <div class="car-footer">
+              <button class="view-details" onclick="openModal('Civic Touring', 'Honda', '2021', 'Prata', '30,000 km', '$230', 'Gasolina', 'Automático', '5 lugares', '../images/civic.png')">Ver Detalhes</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="car-card">
+          <div class="car-image" style="background-image: url('../images/mobi.png');"></div>
+          <div class="car-info">
+            <div class="car-meta">
+              <span class="car-year">2022</span>
+              <span class="car-mileage"><i class="fas fa-tachometer-alt"></i> 20,000 km</span>
+            </div>
+            <h3>Fiat Mobi Like</h3>
+            <p class="car-brand">Fiat</p>
+            <div class="car-footer">
+              <button class="view-details" onclick="openModal('Fiat Mobi Like', 'Fiat', '2022', 'Vermelho', '20,000 km', '$90', 'Flex', 'Manual', '5 lugares', '../images/mobi.png')">Ver Detalhes</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 7 -->
+        <div class="car-card">
+          <div class="car-image" style="background-image: url('../images/kwid.png');"></div>
+          <div class="car-info">
+            <div class="car-meta">
+              <span class="car-year">2023</span>
+              <span class="car-mileage"><i class="fas fa-tachometer-alt"></i> 15,000 km</span>
+            </div>
+            <h3>Kwid Zen</h3>
+            <p class="car-brand">Renault</p>
+            <div class="car-footer">
+              <button class="view-details" onclick="openModal('Kwid Zen', 'Renault', '2023', 'Branco', '15,000 km', '$95', 'Flex', 'Manual', '5 lugares', '../images/kwid.png')">Ver Detalhes</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 8 -->
+        <div class="car-card">
+          <div class="car-image" style="background-image: url('../images/gol.png');"></div>
+          <div class="car-info">
+            <div class="car-meta">
+              <span class="car-year">2021</span>
+              <span class="car-mileage"><i class="fas fa-tachometer-alt"></i> 35,000 km</span>
+            </div>
+            <h3>Gol Trendline</h3>
+            <p class="car-brand">Volkswagen</p>
+            <div class="car-footer">
+              <button class="view-details" onclick="openModal('Gol Trendline', 'Volkswagen', '2021', 'Preto', '35,000 km', '$100', 'Flex', 'Manual', '5 lugares', '../images/gol.png')">Ver Detalhes</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 9 -->
+        <div class="car-card">
+          <div class="car-image" style="background-image: url('../images/compass.png');"></div>
+          <div class="car-info">
+            <div class="car-meta">
+              <span class="car-year">2022</span>
+              <span class="car-mileage"><i class="fas fa-tachometer-alt"></i> 25,000 km</span>
+            </div>
+            <h3>Compass Limited</h3>
+            <p class="car-brand">Jeep</p>
+            <div class="car-footer">
+              <button class="view-details" onclick="openModal('Compass Limited', 'Jeep', '2022', 'Cinza', '25,000 km', '$270', 'Diesel', 'Automático', '5 lugares', '../images/compass.png')">Ver Detalhes</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 10 -->
+        <div class="car-card">
+          <div class="car-image" style="background-image: url('../images/tracker.png');"></div>
+          <div class="car-info">
+            <div class="car-meta">
+              <span class="car-year">2023</span>
+              <span class="car-mileage"><i class="fas fa-tachometer-alt"></i> 10,000 km</span>
+            </div>
+            <h3>Tracker Premier</h3>
+            <p class="car-brand">Chevrolet</p>
+            <div class="car-footer">
+              <button class="view-details" onclick="openModal('Tracker Premier', 'Chevrolet', '2023', 'Azul', '10,000 km', '$220', 'Flex', 'Automático', '5 lugares', '../images/tracker.png')">Ver Detalhes</button>
+            </div>
+          </div>
+        </div>
+
+      </div> <!-- car-grid -->
+    </div> <!-- container -->
+  </main>
+
+  <!-- Modal de Detalhes do Carro -->
+  <div id="carModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <div class="modal-car-image"></div>
+      <div class="modal-car-details">
+        <div class="modal-header">
+          <h2 id="modalCarName"></h2>
+          <p class="modal-car-brand" id="modalCarBrand"></p>
+          <div class="modal-car-meta">
+            <span id="modalCarYear"></span>
+            <span id="modalCarMileage"></span>
+          </div>
+        </div>
+        
+        <div class="modal-car-specs">
+          <h3>Especificações</h3>
+          <div class="specs-grid">
+            <div class="spec-item">
+              <i class="fas fa-palette"></i>
+              <div>
+                <span>Cor</span>
+                <strong id="modalCarColor"></strong>
+              </div>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-gas-pump"></i>
+              <div>
+                <span>Combustível</span>
+                <strong id="modalCarFuel"></strong>
+              </div>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-cog"></i>
+              <div>
+                <span>Câmbio</span>
+                <strong id="modalCarTransmission"></strong>
+              </div>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-users"></i>
+              <div>
+                <span>Lugares</span>
+                <strong id="modalCarSeats"></strong>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="modal-car-price">
+          <h3>Valor da Diária</h3>
+          <p class="price" id="modalCarPrice"></p>
+        </div>
+        
+        <button class="rent-button" onclick="openReservationModal()">
+          <i class="fas fa-calendar-alt"></i> Reservar Agora
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de Reserva -->
+  <div id="reservationModal" class="modal">
+    <div class="modal-content" style="max-width: 500px;">
+      <span class="close" onclick="closeReservationModal()">&times;</span>
+      <div class="reservation-form">
+        <h2>Reservar <span id="reservationCarName"></span></h2>
+        <form id="rentalForm">
+          <div class="form-group">
+            <label for="name">Nome Completo</label>
+            <input type="text" id="name" required>
+          </div>
+          <div class="form-group">
+            <label for="cpf">CPF</label>
+            <input type="text" id="cpf" required placeholder="000.000.000-00">
+          </div>
+          <div class="form-group">
+            <label for="startDate">Data de Início</label>
+            <input type="date" id="startDate" required>
+          </div>
+          <div class="form-group">
+            <label for="endDate">Data de Devolução</label>
+            <input type="date" id="endDate" required>
+          </div>
+          <button type="submit" class="rent-button">
+            <i class="fas fa-check"></i> Confirmar Reserva
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="../scripts/locacoes.js"></script>
 </body>
-<script src="../scripts/locacoes.js"></script>
 </html>

@@ -1,1 +1,64 @@
-@import url(./style.css);
+:root {
+    --cor1: #003366;
+    --cor2: #006699;
+    --cor3: #0099CC;
+    --cor4: #00CCFF;
+    --cor5: #99DDFF;
+    --transp1: rgba(0, 0, 0, 0.8);
+    --transp2: rgba(255, 255, 255, 0.8);
+    --shadow: 0 4px 6px -1px var(--transp1);
+  }
+  
+  body {
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: var(--cor5);
+  }
+  
+  .main-header {
+    background-color: var(--cor2);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--shadow);
+  }
+  
+  .logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--cor5);
+    text-shadow: 1px 1px 2px var(--transp1);
+  }
+  
+  .main-nav {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .nav-link {
+    color: var(--cor5);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    background-color: var(--transp2);
+    color: var(--cor1);
+  }
+  
+  @media (max-width: 768px) {
+    .main-header {
+      flex-direction: column;
+      padding: 1rem;
+      gap: 1rem;
+    }
+    
+    .main-nav {
+      width: 100%;
+      justify-content: space-around;
+    }
+  }

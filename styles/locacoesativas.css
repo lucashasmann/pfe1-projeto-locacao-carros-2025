@@ -10,7 +10,6 @@
     --transition: all 0.3s ease;
   }
   
-  /* Estilos da tabela */
   .rentals-table {
     width: 100%;
     border-collapse: collapse;
@@ -44,8 +43,7 @@
   .rentals-table tbody tr:last-child td {
     border-bottom: none;
   }
-  
-  /* Status badges */
+
   .status-badge {
     display: inline-block;
     padding: 5px 10px;
@@ -70,7 +68,7 @@
     color: #721C24;
   }
   
-  /* Botões de ação */
+
   .btn-action {
     border: none;
     background: none;
@@ -97,7 +95,7 @@
     color: var(--secondary-color);
   }
   
-  /* Mensagem de estado vazio */
+ 
   .empty-state {
     text-align: center;
     padding: 40px 0;
@@ -114,7 +112,7 @@
     color: var(--cor4);
   }
   
-  /* Responsividade */
+  
   @media (max-width: 768px) {
     .rentals-table {
       display: block;

@@ -1,7 +1,7 @@
-// Variável para armazenar o carro selecionado
+
 let selectedCar = null;
 
-// Função para abrir o modal de detalhes do carro
+
 function openModal(name, brand, year, color, mileage, price, fuel, transmission, seats, imageUrl) {
   selectedCar = {
     name, brand, year, color, mileage, price, fuel, transmission, seats, imageUrl
@@ -22,18 +22,16 @@ function openModal(name, brand, year, color, mileage, price, fuel, transmission,
   document.getElementById('carModal').style.display = 'block';
 }
 
-// Função para fechar o modal de detalhes
+
 function closeModal() {
   document.getElementById('carModal').style.display = 'none';
 }
 
-// Função para abrir o modal de reserva
 function openReservationModal() {
   if (!selectedCar) return;
   
   document.getElementById('reservationCarName').textContent = selectedCar.name;
   
-  // Setar a data mínima para hoje
   const today = new Date().toISOString().split('T')[0];
   document.getElementById('startDate').min = today;
   
@@ -41,12 +39,11 @@ function openReservationModal() {
   document.getElementById('reservationModal').style.display = 'block';
 }
 
-// Função para fechar o modal de reserva
 function closeReservationModal() {
   document.getElementById('reservationModal').style.display = 'none';
 }
 
-// Máscara para CPF
+
 document.getElementById('cpf').addEventListener('input', function(e) {
   let value = e.target.value.replace(/\D/g, '');
   
@@ -58,7 +55,7 @@ document.getElementById('cpf').addEventListener('input', function(e) {
   e.target.value = value;
 });
 
-// Atualizar data mínima da devolução quando a data de início muda
+
 document.getElementById('startDate').addEventListener('change', function() {
   const startDate = this.value;
   const endDateInput = document.getElementById('endDate');
@@ -69,7 +66,7 @@ document.getElementById('startDate').addEventListener('change', function() {
   }
 });
 
-// ÚNICO evento de submit do formulário
+
 document.getElementById('rentalForm').addEventListener('submit', function(e) {
   e.preventDefault();
   
@@ -78,7 +75,7 @@ document.getElementById('rentalForm').addEventListener('submit', function(e) {
   const startDate = document.getElementById('startDate').value;
   const endDate = document.getElementById('endDate').value;
 
-  // Validações
+ 
   if (!name || !cpf || !startDate || !endDate) {
     alert('Por favor, preencha todos os campos.');
     return;
@@ -89,10 +86,9 @@ document.getElementById('rentalForm').addEventListener('submit', function(e) {
     return;
   }
 
-  // Obter locações existentes
   let rentals = JSON.parse(localStorage.getItem('acmeRentals')) || [];
 
-  // Criar nova locação
+
   const newRental = {
     id: Date.now().toString(),
     carName: selectedCar.name,
@@ -107,11 +103,11 @@ document.getElementById('rentalForm').addEventListener('submit', function(e) {
     createdAt: new Date().toISOString()
   };
 
-  // Adicionar nova locação
+
   rentals.push(newRental);
 
   try {
-    // Salvar no localStorage
+
     localStorage.setItem('acmeRentals', JSON.stringify(rentals));
     
     alert('Reserva confirmada! Redirecionando para suas locações...');
@@ -124,7 +120,7 @@ document.getElementById('rentalForm').addEventListener('submit', function(e) {
   }
 });
 
-// Fechar modais ao clicar fora do conteúdo
+
 window.onclick = function(event) {
   if (event.target === document.getElementById('carModal')) {
     closeModal();

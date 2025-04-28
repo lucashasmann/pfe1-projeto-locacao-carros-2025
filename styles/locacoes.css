@@ -389,7 +389,7 @@
     }
   }
   
-  /* Estilos para o formulário de reserva */
+
 .reservation-form {
     padding: 30px;
   }
@@ -429,7 +429,7 @@
     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
   }
   
-  /* Responsividade para o modal de reserva */
+ 
   @media (max-width: 576px) {
     .reservation-form {
       padding: 20px;
